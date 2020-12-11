@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    			http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">  
+        
+      <context:annotation-config/>
+      <context:component-scan base-package="com.oozeander.service"/>
+        
+      <bean id="jaxb2Marshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+      	<property name="packagesToScan">
+      		<list value-type="java.lang.String">
+      			<value>com.oozeander.model</value>
+      		</list>
+      	</property>
+      	<property name="marshallerProperties">
+      		<map>
+      			<entry>
+      				<key>
+      					<util:constant static-field="javax.xml.bind.Marshaller.JAXB_FORMATTED_OUTPUT" />
+      				</key>
+      				<value type="java.lang.Boolean">true</value>
+      			</entry>
+      			<entry>
+      				<key>
+      					<util:constant static-field="javax.xml.bind.Marshaller.JAXB_ENCODING" />
+      				</key>
+      				<value type="java.lang.String">UTF-8</value>
+      			</entry>
+      		</map>
+      	</property>
+      </bean>
+</beans>

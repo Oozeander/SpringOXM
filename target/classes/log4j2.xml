@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Properties>
+        <Property name="basePath">/home/billel/Documents/Java/SpringOXM/logs</Property>
+    </Properties>
+ 
+    <Appenders>
+        <RollingFile name="File" fileName="${basePath}/syslog.log" 
+        	filePattern="${basePath}/syslog-%d{dd_MM_yyyy}.log">
+            <PatternLayout>
+                <pattern>%d{dd/MM/yyyy - HH:mm:ss} [%t] %-5level- %logger{36} => %msg%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+            </Policies>
+        </RollingFile>
+ 
+        <Console name="SYSOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{dd/MM/yyyy - HH:mm:ss} [%t] %-5level- %logger{36} => %msg%n" />
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger name="com.oozeander" level="debug" additivity="true">
+            <appender-ref ref="File"/>
+        </Logger>
+        <Root level="debug" additivity="false">
+            <appender-ref ref="SYSOUT" />
+        </Root>
+    </Loggers>
+</Configuration>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Employee NNI="BKBC76BN" Gender="M">
+    <Firstname>Billel</Firstname>
+    <Lastname>KETROUCI</Lastname>
+    <Arrival>11/12/2020</Arrival>
+    <Gender>Homme</Gender>
+    <emails>
+        <email>billel.ketrouci@gmail.com</email>
+        <email>billel.ketrouci@outlook.fr</email>
+    </emails>
+    <Address>
+        <StreetNumber>20</StreetNumber>
+        <StreetName>Rue de Quelque Chose</StreetName>
+        <ZipCode>93200</ZipCode>
+        <Location Country="FRANCE">Ile-de-France</Location>
+    </Address>
+</Employee>
